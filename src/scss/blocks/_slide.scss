@@ -1,0 +1,123 @@
+@mixin background-size {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.slide {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-bottom: 80px;
+
+  background-color: var(--page-bg);
+
+  background-position: center center; /* x y */
+  background-size: cover !important;
+  background-repeat: no-repeat;
+
+  &--norway {
+    background: var(--radial-bg), var(--linear-bg), url(../img/slider-bg/01.jpg);
+
+    @include background-size;
+  }
+
+  &--austria {
+    background: var(--radial-bg), var(--linear-bg), url(../img/slider-bg/02.jpg);
+
+    @include background-size;
+  }
+
+  &--uae {
+    background: var(--radial-bg), var(--linear-bg), url(../img/slider-bg/03.jpg);
+
+    @include background-size;
+  }
+
+  &--thailand {
+    background: var(--radial-bg), var(--linear-bg), url(../img/slider-bg/04.jpg);
+
+    @include background-size;
+  }
+
+  &--morocco {
+    background: var(--radial-bg), var(--linear-bg), url(../img/slider-bg/05.jpg);
+
+    @include background-size;
+  }
+
+  &::before {
+    content: "";
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  @media (min-width: 1200px) and (max-height: 700px) {
+    padding-bottom: 40px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    padding-bottom: 60px;
+  }
+
+  @media screen and (max-width: 777px) {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+}
+
+.slide__header {
+  text-align: center;
+  position: relative;
+}
+
+.slide__tagline {
+  font-weight: 500;
+  //font-size: 30px;
+  font-size: 1.56vw;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.slide__title {
+  display: inline-block;
+  font-weight: 700;
+  //   font-size: 250px;
+  font-size: 13vw; // https://only-to-top.ru/services/px-to-vw.html
+
+  background: linear-gradient(26deg, #000 -4%, rgba(255, 255, 255, 0) 24.08%),
+    #fff;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (min-width: 1200px) and (max-height: 700px) {
+    font-size: 140px;
+  }
+}
+
+.slide__locations {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1050px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 777px) {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,37 @@
+.slide-control {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  
+}
+
+.slide-control__arrows {
+  display: flex;
+  gap: 5px;
+
+  &--right {
+    transform: rotate(180deg);
+  }
+}
+
+.slide-control__count {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 6px;
+
+  font-weight: 600;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.slide-control__count-current, .swiper-pagination-current {
+  font-size: 32px;
+  color: var(--text-color);
+}
+
+.swiper-pagination-total {
+  color: rgba(255, 255, 255, 0.3);
+}
